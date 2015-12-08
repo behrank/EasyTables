@@ -12,25 +12,25 @@ Its makes easier to initialize a datatable with few lines of code.
 Example:
 Controller:
 
-[ChildActionOnly]
-public ActionResult GetTableView(int typeOfTable)
-{
-    var colmNames = new Dictionary<string, bool>();
-    switch (typeOfTable)
-    {
-        //List of colm names
-        case 1:
-        colmNames = new Dictionary<string, bool>
-        {
-            {"title",true},{"title 1",true} // Key:title of column, Value:Determine a search functionality is reqiured or not.
-        };
-        break;
-        default:
-        break;
-    }
-    ViewBag.TableHeaders = colmNames;
-    return PartialView("_tableView"); //this is our partial view to render datatable
-}
+```[ChildActionOnly]
+```public ActionResult GetTableView(int typeOfTable)
+```{
+```    var colmNames = new Dictionary<string, bool>();
+```   switch (typeOfTable)
+```    {
+```        //List of colm names
+```        case 1:
+```        colmNames = new Dictionary<string, bool>
+```        {
+```            {"title",true},{"title 1",true} // Key:title of column, Value:Determine a search functionality is reqiured or not.
+```        };
+```        break;
+```        default:
+```        break;
+```    }
+```    ViewBag.TableHeaders = colmNames;
+```    return PartialView("_tableView"); //this is our partial view to render datatable
+```}
 
 Partial View:
 <table id="dyntable">
