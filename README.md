@@ -30,14 +30,14 @@ public ActionResult GetTableView(int typeOfTable)
     }
     ViewBag.TableHeaders = colmNames;
     return PartialView("_tableView"); //this is our partial view to render datatable
-```}
-
+}
+```
 Partial View:
 ```
 <table id="dyntable">
     <thead>
     <tr role="row">
-        @{
+        @@{
             foreach (var t in ViewBag.TableHeaders)
             {
                 <th>@t.Key</th>
@@ -45,7 +45,7 @@ Partial View:
         }
     </tr>
     <tr class="sptl">
-        @{
+        @@{
             foreach (var t in ViewBag.TableHeaders)
             {
                 //add an input if search feature is needed
