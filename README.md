@@ -68,6 +68,9 @@ Partial View:
 3. Add this simple code to your page
 ```
     jQuery(document).ready(function() {
+       var extMethods = function(oSettings) {
+           // add more functionality if you need to extend it.
+        }
         //Datatable initialization
         easyTables.create({
             elementId: "dyntable", //table body ID
