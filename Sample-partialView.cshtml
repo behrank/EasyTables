@@ -1,0 +1,33 @@
+<!-- Sample MVC partial page -->
+
+<table id="dyntable">
+    <thead>
+    <tr role="row">
+
+        @{
+            foreach (var t in ViewBag.TableHeaders)
+            {
+                <th>@t.Key</th>
+            }
+        }
+    </tr>
+    <tr class="sptl">
+        @{
+            foreach (var t in ViewBag.TableHeaders)
+            {
+                //add an input if search feature is needed
+                if ((bool)t.Value)
+                {
+                    <th><input type="text" name="search_engine" value="" class="form-control input-sm"/></th>
+                }
+                else
+                {
+                    <th></th>
+                }
+
+            }
+        }
+    </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
